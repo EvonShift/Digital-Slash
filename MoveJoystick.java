@@ -7,7 +7,7 @@ public class MoveJoystick extends Joystick  {
 	}
 
 	public void action(){
-		Player.setPosX(Player.getPos().x + touchPos.x);
-		Player.setPosX(Player.getPos().y + touchPos.y);
+		Player.setPosX(Player.getPos().x + touchPos.x * 0.06f);
+		Player.setPosY(Player.getPos().y + touchPos.y * 0.06f);
 	}
 }

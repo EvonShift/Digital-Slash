@@ -14,7 +14,7 @@ public class Joystick {
 	}
 
 	public void update(){
-		for (int i = 3; i >= 0; i--)
+		for (int i = 0; i < 3; i++)
 			if (Gdx.input.isTouched(i)){
 				touchPos.x = Gdx.input.getX(i) - pos.x;
 				touchPos.y = (Gdx.graphics.getHeight() - Gdx.input.getY(i)) - pos.y;
@@ -23,10 +23,10 @@ public class Joystick {
 		if (!Gdx.input.isTouched(touchId)){
 			touchPos.x = 0; touchPos.y = 0;
 		}
-		if (DtP.toPolaris((touchPos.x),(touchPos.y),true) > 175){
+		if (DtP.toPolaris((touchPos.x),(touchPos.y),true) > 150){
 			double r = DtP.toPolaris((touchPos.x),(touchPos.y),false);
-			touchPos.x = (float) DtP.toCartesian(175, r, false);
-			touchPos.y = (float) DtP.toCartesian(175, r, true);
+			touchPos.x = (float) DtP.toCartesian(150, r, false);
+			touchPos.y = (float) DtP.toCartesian(150, r, true);
 		}
 		render();
 	}

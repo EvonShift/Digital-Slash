@@ -12,8 +12,7 @@ public class Player {
 	public static void create(){
 		pos = new Vector2(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2);
 		moveJoystick = new MoveJoystick(240, 240);
-		sprite = new Sprite();
-		sprite.setTexture(TextureManager.tPlayer);
+		sprite = new Sprite(TextureManager.tPlayer);
 		sprite.setCenter(20, 33);
 	}
 
@@ -31,6 +30,7 @@ public class Player {
 
 	public static void update(){
 		sprite.setPosition(pos.x, pos.y);
+		System.out.println(pos);
 		render();
 	}
 
