@@ -13,7 +13,6 @@ public class Play implements Screen {
 	@Override
 	public void render(float delta) {
 		Main.getBatch().begin();
-		Player.getMoveJoystick().update();
 		Player.update();
 		Main.getBatch().end();
 	}
