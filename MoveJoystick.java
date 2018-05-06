@@ -9,9 +9,11 @@ public class MoveJoystick extends Joystick  {
 	}
 
 	public void action(){
-		float spMod = 1f * Gdx.graphics.getDeltaTime();
-		if (Player.getRotationJoystick().touchId != 19) spMod = 0.5f * Gdx.graphics.getDeltaTime();
+		float spMod = 2 * Gdx.graphics.getDeltaTime();
+		if (Player.getRotationJoystick().touchId != 19) spMod = 1 * Gdx.graphics.getDeltaTime();
 		Player.setPosX(Player.getPos().x + touchPos.x * spMod);
 		Player.setPosY(Player.getPos().y + touchPos.y * spMod);
+		if (Player.getRotationJoystick().touchPos.x == 0 && Player.getRotationJoystick().touchPos.y == 0)
+			Player.setSpriteRotatiion((float) DtP.toPolaris(touchPos.x, touchPos.y, false));
 	}
 }
