@@ -14,20 +14,22 @@ public class Shot{
 		sprite = new Sprite(TextureManager.tShot);
 	}
 
-	public void shot (Vector2 pos, float degress){
-		this.pos = pos;
+	public void shot (float x, float y, float degress){
 		al = 1;
-		this.pos.x = pos.x;
-		this.pos.y = pos.y;
+		pos.x = x;
+		pos.y = y;
 		sprite.setRotation(degress);
+		sprite.setOrigin(0, 0);
 	}
 
 	public void update(){
+		sprite.setX(pos.x);
+		sprite.setY(pos.y);
 		sprite.setAlpha(al);
+		sprite.draw(Main.getBatch());
 		if (al < 0) al = 0;
 		if (al > 0) al -= Gdx.graphics.getDeltaTime();
 		if (al == 0){ pos.x = -1; pos.y = -1; }
-		sprite.draw(Main.getBatch());
 	}
 
 	public float getAl(){
