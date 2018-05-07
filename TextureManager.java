@@ -9,12 +9,14 @@ public class TextureManager {
 	static Texture tJoyBack;
 	static Texture tPlayer;
 	static Texture tShot;
+	static Texture ttt;
 
 	public static void upload(){
 		tJoyBack = new Texture(Gdx.files.internal("JoyBack.png"));
 		tJoy = new Texture(Gdx.files.internal("JoyStick.png"));
 		tPlayer = new Texture(Gdx.files.internal("Player.png"));
 		tShot = new Texture(Gdx.files.internal("Shot.png"));
+		ttt = new Texture(Gdx.files.internal("Enemy.png"));
 	}
 
 	public static void dispose(){
