@@ -45,10 +45,6 @@ public class Joystick {
         action();
         Main.getBatch().draw(TextureManager.tJoyBack, pos.x - 100, pos.y - 100);
         Main.getBatch().draw(TextureManager.tJoy, -24 + pos.x + touchPos.x, -24 + pos.y + touchPos.y);
-        /*Main.getBatch().draw(TextureManager.tJoy, touchBox.x + 200, touchBox.y + 000);
-        Main.getBatch().draw(TextureManager.tJoy, touchBox.x + 000, touchBox.y + 200);
-        Main.getBatch().draw(TextureManager.tJoy, touchBox.x - 200, touchBox.y - 000);
-        Main.getBatch().draw(TextureManager.tJoy, touchBox.x - 000, touchBox.y - 200);*/
     }
 
     public void action() {
